@@ -1,8 +1,8 @@
 const board = document.getElementById("game-board");
 const instructionText = document.getElementById("instruction-text");
 const logo = document.getElementById("logo");
-const score = document.getElementById("score");
 const highScoreText = document.getElementById("highScore");
+const currentScoreText = document.getElementById("currentScore");
 
 const gridSizeY = 10;
 const gridSizeX = 15;
@@ -10,6 +10,7 @@ const gridSizeX = 15;
 // Initial snake properties
 let snake = [{ x: 8, y: 5 }];
 let food = generateFood();
+let currentScore = snake.length - 1;
 let highScore = 0;
 let direction = "right";
 let gameInterval;
@@ -106,6 +107,8 @@ function startGame() {
   instructionText.style.display = "none";
   logo.style.display = "none";
   board.style.display = "";
+  highScoreText.style.display = "none";
+  currentScoreText.style.display = "";
   gameInterval = setInterval(gameLoop, gameSpeedDelay);
 }
 
@@ -113,6 +116,7 @@ function gameLoop() {
   move();
   checkCollision();
   draw();
+  updateScore();
 }
 
 // Handle button presses to change the direction of the snake
@@ -187,6 +191,8 @@ function stopGame() {
   instructionText.style.display = "";
   logo.style.display = "";
   board.style.display = "none";
+  highScoreText.style.display = "";
+  currentScoreText.style.display = "none";
 }
 
 // Update the high score if the current score is higher
@@ -200,6 +206,6 @@ function updateHighScore() {
 
 // Update the score display
 function updateScore() {
-  const currentScore = snake.length - 1;
-  score.textContent = currentScore.toString();
+  currentScore = snake.length - 1;
+  currentScoreText.textContent = currentScore.toString();
 }

@@ -6,6 +6,7 @@
   margin-right: auto;
   height: 900px;
   width: 450px;
+  position: relative; 
 }
 
 #game-board {
@@ -24,7 +25,8 @@
   padding-right: 10px;
 }
 
-#instruction-text, #highScore {
+#instruction-text,
+#highScore, #currentScore {
   position: relative;
   font-family: VT323;
   text-align: center;
@@ -47,12 +49,14 @@
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 35px;
   grid-row-gap: 40px;
-  position: relative;
-  top: 335px;
+  position: absolute; 
+  bottom: 19px; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .buttons-container button {
-  width: 80%;
+  width: 100px;
   height: 40px;
   margin-left: auto;
   margin-right: auto;
