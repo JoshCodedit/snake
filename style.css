@@ -1,75 +1,79 @@
-.game-container{
-    background-image: url('./3310.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 900px;
-    width: 450px;
+.game-container {
+  background-image: url('./3310.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 900px;
+  width: 450px;
+  position: relative; 
 }
 
 #game-board {
-    display: grid;
-    grid-template-columns: repeat(15, 20px); /* Adjust as needed to fit the dimensions */
-    grid-template-rows: repeat(10, 20px); /* Adjust as needed to fit the dimensions */
-    gap: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 21px;
-    position: relative;
-    top: 155px;
-    left: 5px;
-    border: solid #000000 10px;
-    border-radius: 10px;
-    padding-right: 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(15, 20px);
+  grid-template-rows: repeat(10, 20px);
+  gap: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 21px;
+  position: relative;
+  top: 155px;
+  left: 5px;
+  border: solid #000000 10px;
+  border-radius: 10px;
+  padding-right: 10px;
+}
 
-  #instruction-text{
-    position: relative;
-    font-family: VT323;
-    text-align: center;
-    margin: 0;
-    top: 115px;
-    color: #333;
-  }
+#instruction-text,
+#highScore, #currentScore {
+  position: relative;
+  font-family: VT323;
+  text-align: center;
+  margin: 0;
+  top: 98px;
+  color: #333;
+}
 
-  #logo{
-    width: 190px;
-    position: relative;
-    left: 140px;
-    top: 140px;
-    opacity: 0.7;
-  }
+#logo {
+  width: 190px;
+  position: relative;
+  left: 140px;
+  top: 135px;
+  opacity: 0.7;
+}
 
 .buttons-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 35px;
-    grid-row-gap: 40px;
-    position: relative;
-    top: 335px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 35px;
+  grid-row-gap: 40px;
+  position: absolute; 
+  bottom: 19px; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .buttons-container button {
-        width: 80%;
-        height: 40px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 35px;
-        border: none;
-        cursor: pointer;
-        background-color: #becad8;
+  width: 100px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+  background-color: #becad8;
 }
 
 .snake {
-    background-color: #414141;
-    width: 20px;
-    height: 20px;
-    border: #5a5a5a 1px dotted;
-  }
+  background-color: #414141;
+  width: 20px;
+  height: 20px;
+  border: #5a5a5a 1px dotted;
+}
 
 .food {
-    background-color: #999;
-    border: #7a7a7a 5px solid;
+  background-color: #999;
+  border: #7a7a7a 5px solid;
 }
