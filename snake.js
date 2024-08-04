@@ -121,10 +121,13 @@ function gameLoop() {
 
 // Handle button presses to change the direction of the snake
 function handleButtonPress(newDirection) {
-  if (direction === "up" && newDirection === "down" || 
-      direction === "down" && newDirection === "up" || 
-      direction === "left" && newDirection === "right" || 
-      direction === "right" && newDirection === "left") return;
+  if (
+    (direction === "up" && newDirection === "down") ||
+    (direction === "down" && newDirection === "up") ||
+    (direction === "left" && newDirection === "right") ||
+    (direction === "right" && newDirection === "left")
+  )
+    return;
 
   direction = newDirection;
 }
@@ -149,10 +152,18 @@ function handleKeyPress(event) {
 
 // Event listeners for restart button and direction buttons
 document.getElementById("restart").addEventListener("click", startGame);
-document.getElementById("up").addEventListener("click", () => handleButtonPress("up"));
-document.getElementById("down").addEventListener("click", () => handleButtonPress("down"));
-document.getElementById("left").addEventListener("click", () => handleButtonPress("left"));
-document.getElementById("right").addEventListener("click", () => handleButtonPress("right"));
+document
+  .getElementById("up")
+  .addEventListener("click", () => handleButtonPress("up"));
+document
+  .getElementById("down")
+  .addEventListener("click", () => handleButtonPress("down"));
+document
+  .getElementById("left")
+  .addEventListener("click", () => handleButtonPress("left"));
+document
+  .getElementById("right")
+  .addEventListener("click", () => handleButtonPress("right"));
 document.addEventListener("keydown", handleKeyPress);
 
 // Increase the speed of the game
@@ -168,7 +179,11 @@ function checkCollision() {
   if (head.x < 1 || head.x > gridSizeX || head.y < 1 || head.y > gridSizeY) {
     resetGame();
   }
-  if (snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y)) {
+  if (
+    snake
+      .slice(1)
+      .some((segment) => segment.x === head.x && segment.y === head.y)
+  ) {
     resetGame();
   }
 }
